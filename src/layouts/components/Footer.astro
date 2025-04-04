@@ -1,19 +1,115 @@
 ---
 const today = new Date();
+import { Image } from 'astro:assets';
+import WechatIcon from '../../assets/img/IcSharpWechat.svg';
+import TwitterXIcon from '../../assets/img/RiTwitterXFill.svg';
+import XiaohongshuIcon from '../../assets/img/SimpleIconsXiaohongshu.svg';
+import BuyMeACoffeeIcon from '../../assets/img/SimpleIconsBuymeacoffee.svg';
+import RssIcon from '../../assets/img/SiGlyphRss.svg';
 ---
 
 <footer class='container mt-8'>
-  <div class="justify-center flex gap-4 py-8 prose dark:prose-invert text-sm">
-    <a href="#">Newsletter</a>
-    <a href="#">Buy me a Coffee</a>
-    <a href="#">RSS</a>
-  </div>
+	<div class='justify-center flex gap-6 py-8 prose dark:prose-invert text-sm'>
+		<a
+			href='https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIxOTcxMDUwMQ%3D%3D&scene=124&uin=&key=&devicetype=iMac+Macmini8,1+OSX+OSX+13.4+build(22F66)&version=1308050b&lang=zh_CN&nettype=WIFI&a8scene=15&session_us=gh_273a27d679ce&fontScale=100'
+			target='_blank'
+			class='social-icon wechat'
+			aria-label='微信'
+		>
+			<Image src={WechatIcon} alt='微信' width={24} height={24} />
+		</a>
+		<a href='https://x.com/qzcanoe' target='_blank' class='social-icon twitter' aria-label='X'>
+			<Image src={TwitterXIcon} alt='X' width={24} height={24} />
+		</a>
+		<a
+			href='https://www.xiaohongshu.com/user/profile/5c3c149800000000060372e6'
+			target='_blank'
+			class='social-icon xiaohongshu'
+			aria-label='小红书'
+		>
+			<Image src={XiaohongshuIcon} alt='小红书' width={26} height={24} />
+		</a>
+		<a href='https://buymeacoffee.com/xcanoe' target='_blank' class='social-icon buyme' aria-label='Buy me a Coffee'>
+			<Image src={BuyMeACoffeeIcon} alt='Buy me a Coffee' width={24} height={24} />
+		</a>
+		<a href='/rss.xml' target='_blank' class='social-icon rss' aria-label='RSS'>
+			<Image src={RssIcon} alt='RSS' width={20} height={20} />
+		</a>
+	</div>
 
-	<div class='py-4 border-t dark:border-t-zinc-700'>
-    <div class="md:flex text-sm text-zinc-500 dark:text-zinc-300 prose dark:prose-invert justify-between">
-      <div>Copyright © {today.getFullYear()} Devolio.</div>
-      <!-- Please leave the credit if you dont make a significant changes to the template. It's just a nofollow link :)  -->
-      <div>Template created by <a href="https://devaradise.com" target="_blank" rel="nofollow noopener">Syakir @ Devaradise</a></div>      
-    </div>
+	<div class='py-4 border-t dark:border-t-zinc-800'>
+		<div class='md:flex text-sm text-zinc-500 dark:text-zinc-300 prose dark:prose-invert justify-between'>
+			<div>Copyright © {today.getFullYear()} Canoe.</div>
+		</div>
 	</div>
 </footer>
+
+<style>
+	.social-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0.8;
+		transition:
+			opacity 0.3s ease,
+			transform 0.3s ease;
+	}
+
+	.social-icon:hover {
+		opacity: 1;
+		transform: translateY(-2px);
+	}
+
+	.social-icon img {
+		filter: grayscale(100%);
+		transition: filter 0.3s ease;
+	}
+
+	:global(.dark) .social-icon img {
+		filter: invert(1) grayscale(100%);
+	}
+
+	.social-icon:hover img {
+		filter: none;
+	}
+
+	.wechat:hover img {
+		filter: brightness(0) saturate(100%) invert(58%) sepia(81%) saturate(549%) hue-rotate(98deg) brightness(93%) contrast(98%);
+	}
+
+	.twitter:hover img {
+		filter: brightness(0) saturate(100%) invert(48%) sepia(99%) saturate(1752%) hue-rotate(183deg) brightness(101%) contrast(91%);
+	}
+
+	.xiaohongshu:hover img {
+		filter: brightness(0) saturate(100%) invert(34%) sepia(65%) saturate(3820%) hue-rotate(330deg) brightness(98%) contrast(97%);
+	}
+
+	.buyme:hover img {
+		filter: brightness(0) saturate(100%) invert(83%) sepia(53%) saturate(979%) hue-rotate(358deg) brightness(103%) contrast(105%);
+	}
+
+	.rss:hover img {
+		filter: brightness(0) saturate(100%) invert(54%) sepia(91%) saturate(1304%) hue-rotate(359deg) brightness(99%) contrast(106%);
+	}
+
+	:global(.dark) .wechat:hover img {
+		filter: brightness(0) saturate(100%) invert(58%) sepia(81%) saturate(549%) hue-rotate(98deg) brightness(93%) contrast(98%);
+	}
+
+	:global(.dark) .twitter:hover img {
+		filter: brightness(0) saturate(100%) invert(48%) sepia(99%) saturate(1752%) hue-rotate(183deg) brightness(101%) contrast(91%);
+	}
+
+	:global(.dark) .xiaohongshu:hover img {
+		filter: brightness(0) saturate(100%) invert(34%) sepia(65%) saturate(3820%) hue-rotate(330deg) brightness(98%) contrast(97%);
+	}
+
+	:global(.dark) .buyme:hover img {
+		filter: brightness(0) saturate(100%) invert(83%) sepia(53%) saturate(979%) hue-rotate(358deg) brightness(103%) contrast(105%);
+	}
+
+	:global(.dark) .rss:hover img {
+		filter: brightness(0) saturate(100%) invert(54%) sepia(91%) saturate(1304%) hue-rotate(359deg) brightness(99%) contrast(106%);
+	}
+</style>
