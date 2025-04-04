@@ -119,12 +119,19 @@ const menu = [
 
 	<script is:inline>
 		const theme = (() => {
+			// 检查用户是否手动切换过主题
+			const userPreferred = localStorage.getItem('userPreferredTheme') === 'true';
+
+			// 如果用户手动设置过主题，使用存储的主题
+			if (userPreferred && typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+				return localStorage.getItem('theme');
+			}
+
+			// 否则跟随系统
 			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 				return 'dark';
 			}
-			if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-				return localStorage.getItem('theme');
-			}
+
 			return 'light';
 		})();
 
@@ -135,6 +142,25 @@ const menu = [
 		}
 
 		window.localStorage.setItem('theme', theme || '');
+
+		// 监听系统主题变化
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+			// 只有当用户未手动设置主题时才跟随系统
+			if (localStorage.getItem('userPreferredTheme') !== 'true') {
+				const newTheme = e.matches ? 'dark' : 'light';
+				document.documentElement.classList.toggle('dark', e.matches);
+				localStorage.setItem('theme', newTheme);
+
+				// 如果存在评论框，同步评论框主题
+				if (typeof sendMessage === 'function') {
+					sendMessage({
+						setConfig: {
+							theme: e.matches ? 'dark_dimmed' : 'light'
+						}
+					});
+				}
+			}
+		});
 
 		function sendMessage(message) {
 			const iframe = document.querySelector('iframe.giscus-frame');
@@ -160,6 +186,9 @@ const menu = [
 					}
 				});
 			}
+
+			// 用户手动切换主题，标记为已手动选择
+			localStorage.setItem('userPreferredTheme', 'true');
 			localStorage.setItem('theme', isDark ? 'dark' : 'light');
 		};
 		document.getElementById('themeToggle')?.addEventListener('click', handleToggleClick);
