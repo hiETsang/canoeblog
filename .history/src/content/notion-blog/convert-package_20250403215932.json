@@ -1,0 +1,10 @@
+{
+    "name": "frontmatter-converter",
+    "version": "1.0.0",
+    "description": "将Notion博客frontmatter转换为Astro兼容格式",
+    "main": "convert-frontmatter.js",
+    "dependencies": {
+        "js-yaml": "^4.1.0"
+    },
+    "type": "commonjs"
+}
