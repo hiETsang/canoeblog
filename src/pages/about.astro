@@ -3,83 +3,89 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Ava from '@src/assets/img/ava.jpg';
 import Prose from '../components/Prose.astro';
-
 ---
 
-<BaseLayout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
->
-  <div class='container'>
+<BaseLayout title='About Me' description='关于轻舟 - 独立开发者'>
+	<div class='container'>
 		<main class='prose text-lg dark:prose-invert'>
-      <article>
-        <div class='w-full md:flex md:items-center gap-16 mb-10'>
-          <div class="text-pretty leading-9">
-            <h1 class="text-4xl font-bold mb-4">Hi There 👋, Syakir Here! </h1>
-            <Prose>
-              <div class="text-lg">
-                <p>I am a Front-end Engineer from Indonesia. I love sharing what i know on <a href="https://devaradise.com" target="_blank">devaradise.com</a>, and sometime i also share freebies like this. I'm also active on <a href="https://dev.to/syakirurahman" target="_blank">dev.to</a> and <a href="https://x.com/syakirurahman" target="_blank">twitter</a>.</p>
-                <p>I made Devolio to help you easily set up your own blog and portfolio website. It's a static site built with Astro and Tailwind CSS, and you can deploy it on platforms like <a href="https://app.netlify.com/start/deploy?repository=https://github.com/devaradise/devolio" target="_blank" rel="nofollow noopener">Netlify</a>, <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdevaradise%2Fdevolio" target="_blank" rel="nofollow noopener">Vercel</a>, or <a href="https://pages.cloudflare.com/" target="_blank" rel="nofollow noopener">Cloudflare Pages</a>.</p>  
-              </div>
-            </Prose>
-          </div>
-          <Image src={Ava} alt="Muhammad Syakirurohman" width={300}  class="rounded-3xl rotate-3 mx-4 md:mx-0"/>
-        </div>     
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-            viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-            adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-            et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-            vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-            sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-          </p>
+			<article>
+				<div class='w-full md:flex md:items-center gap-16 mb-10'>
+					<div class='text-pretty leading-9'>
+						<h1 class='text-4xl font-bold mb-4'>你好 👋, 我是轻舟!</h1>
+						<Prose>
+							<div class='text-lg'>
+								<p>
+									目前就职于 <a href='https://sspai.com' target='_blank' rel='noopener noreferrer'>少数派</a>，<a
+										href='https://swiftgg.team'
+										target='_blank'
+										rel='noopener noreferrer'>SwiftGG 社区</a
+									> 组织核心成员，也是一位在空余时间持续打磨产品的独立开发者。
+								</p>
+							</div>
+							<p>这里是我记录思考、分享灵感的地方——关于产品、关于独立开发、也关于我们如何在日常中找到专注与自由。</p>
+						</Prose>
+					</div>
+					<Image src={Ava} alt='轻舟' width={300} class='rounded-3xl rotate-3 mx-4 md:mx-0' />
+				</div>
+				<div>
+					<p>过去两年，我上线了几款产品：</p>
 
-          <p>
-            Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-            tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-            blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-            porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-            massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-            Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-            bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-            massa massa ultricies mi.
-          </p>
+					<ul>
+						<li>
+							<strong
+								><a href='https://apps.apple.com/us/app/focusfour-task-daily-planner/id6661031104' target='_blank' rel='noopener noreferrer'
+									>FocusFour</a
+								></strong
+							>：一款基于四象限任务管理法的提醒事项增强工具，帮你理清轻重缓急，找回专注节奏。
+						</li>
+						<li>
+							<strong
+								><a href='https://apps.apple.com/sg/app/phorase/id6497569235' target='_blank' rel='noopener noreferrer'>Phorase</a></strong
+							>：一款如魔术般的 AI 修图工具，轻松消除照片中的杂物与干扰。
+						</li>
+						<li>
+							<strong><a href='https://indieto.com/' target='_blank' rel='noopener noreferrer'>IndieTO</a></strong
+							>：由我精心筛选的，找需求→产品规划→设计→开发→运营推广→变现 完整路径下的实用工具，帮助你快速启动和发布你的产品。
+						</li>
+						<li>
+							<strong><a href='https://linktomarkdown.com/' target='_blank' rel='noopener noreferrer'>LinkToMarkdown</a></strong
+							>：一个简单且现代化的免费工具，它允许你从链接中提取文档并生成 Markdown，自动过滤掉垃圾内容和广告。
+						</li>
+					</ul>
 
-          <p>
-            Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-            suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-            nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-            turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-            dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-            semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-            vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-            facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-            vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-            urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-          </p>
+					<p>这些产品都源于我自身真实的需求，也代表着我对"简单、有用、好看"的产品理念的尝试与坚持。</p>
 
-          <p>
-            Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-            viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-            scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-            gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-            pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-            blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-            cursus metus aliquam eleifend mi.
-          </p>
+					<hr class='my-8' />
 
-          <p>
-            Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-            nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-            tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-            ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-            proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-          </p>
-        </div>
-        </article>
-      </article>
-    </main>
-  </div>
+					<p>
+						我始终相信<strong>技术不是目的，而是人与人之间情感与效率的桥梁</strong
+						>。在这个日益复杂的时代，我想做一些让人觉得「轻一点、清一点」的东西。
+					</p>
+
+					<p>
+						我在产品中追求的不是功能的堆砌，而是让每个打开它的人，<strong>获得一点掌控感，一点美感，和一点不那么焦虑的可能性</strong>。
+					</p>
+
+					<hr class='my-8' />
+
+					<p>作为一名开发者，我是 AI 的深度使用者，也是它的警觉观察者。</p>
+
+					<p>
+						AI 工具带来的不是"替代"，而是一次<strong>认知杠杆的升级</strong
+						>----如果你知道你要什么，它会让你飞得更快；但如果你迷失方向，它只会让你更快迷失。
+					</p>
+
+					<p>我尝试将 AI 融入到创作与开发的各个环节，让它成为一位得力助手，但始终保留人类的温度、判断与表达。</p>
+
+					<hr class='my-8' />
+
+					<h2 class='text-2xl font-bold mt-8 mb-4'>接下来</h2>
+
+					<p>我会继续写字、做产品、思考，探索独立创作和科技的边界。</p>
+
+					<p>也欢迎和我一起聊聊：关于产品、AI、写作、工具的未来，或者人生本身。</p>
+				</div>
+			</article>
+		</main>
+	</div>
 </BaseLayout>
