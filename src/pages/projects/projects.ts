@@ -5,6 +5,7 @@ export interface Project {
   demoLink: string;
   tags?: string[],
   description?: string;
+  logo?: string;
   postLink?: string;
   demoLinkRel?: string;
   [key: string]: any;
@@ -16,21 +17,24 @@ export const projects: Project[] = [
     description: '一款基于四象限任务管理法的提醒事项增强工具，帮你把握重要的事',
     demoLink: 'https://apps.apple.com/us/app/focusfour-task-daily-planner/id6661031104',
     demoLinkRel: 'nofollow noopener noreferrer',
-    tags: ['Productivity', 'App']
+    tags: ['Productivity', 'App'],
+    logo: '/img/projects/focusfour-logo.png'
   },
   {
     name: 'Phorase',
     description: '一款如魔术般的 AI 修图工具，轻松消除照片中的杂物与干扰',
     demoLink: 'https://apps.apple.com/sg/app/phorase/id6497569235',
     demoLinkRel: 'nofollow noopener noreferrer',
-    tags: ['AI', 'Photo', 'App']
+    tags: ['AI', 'Photo', 'App'],
+    logo: '/img/projects/phorase-logo.png'
   },
   {
     name: 'IndieTO',
     description: '由我精心筛选的独立开发全流程实用工具集，帮助你快速启动和发布产品',
     demoLink: 'https://indieto.com/',
     demoLinkRel: 'nofollow noopener noreferrer',
-    tags: ['Tools', 'IndieHacker']
+    tags: ['Tools', 'IndieHacker'],
+    logo: '/img/projects/indieto-logo.png'
   },
   {
     name: 'LinkToMarkdown',

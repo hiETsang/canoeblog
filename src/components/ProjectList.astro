@@ -11,7 +11,12 @@ const { projects } = Astro.props;
 <div class='grid grid-cols-12 gap-5'>
 	{
 		projects.map((project: Project) => (
-			<div class='col-span-12 sm:col-span-6 lg:col-span-4 border dark:border-zinc-700 rounded-xl shadow-sm p-5 transition-all duration-300 hover:shadow-md hover:-translate-y-1 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800'>
+			<div class='col-span-12 sm:col-span-6 lg:col-span-4 border dark:border-zinc-700 rounded-xl shadow-sm p-5 transition-all duration-300 hover:shadow-md hover:-translate-y-1 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 relative overflow-hidden'>
+				{project.logo && (
+					<div class='absolute -top-2 -right-1 opacity-0 -rotate-0 transition-all duration-500 project-logo'>
+						<img src={project.logo} alt={`${project.name} logo`} class='w-20 h-20 object-contain rounded-2xl' />
+					</div>
+				)}
 				<div class='flex justify-between items-center'>
 					<div class='flex gap-2'>
 						{(project.tags || [])?.map((tag: string) => (
@@ -57,7 +62,7 @@ const { projects } = Astro.props;
 							Article
 						</a>
 					)}
-					{project.demoLink && ( // This line adds the conditional check for the Demo link
+					{project.demoLink && (
 						<a class='underline flex items-center gap-2' href={project.demoLink} target='_blank' rel={project.demoLinkRel}>
 							打开
 							<svg
@@ -82,3 +87,11 @@ const { projects } = Astro.props;
 		))
 	}
 </div>
+
+<style>
+	/* 项目卡片 hover 时显示 logo 动画效果 */
+	.col-span-12:hover .project-logo {
+		opacity: 0.9;
+		transform: rotate(-15deg);
+	}
+</style>
