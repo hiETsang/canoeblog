@@ -26,7 +26,7 @@ category: 思考
 
 ![](https://images.unsplash.com/photo-1738640679960-58d445857945?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxNDIyNzR8MHwxfHNlYXJjaHw5MXx8YWl8ZW58MHx8fHwxNzQ4NDM2NjY1fDA&ixlib=rb-4.1.0&q=80&w=1080)
 
-### 不是 AI + 产品，而是产品 + AI
+## 不是 AI + 产品，而是产品 + AI
 
 我一直相信一个底层逻辑：**AI 应该是为产品服务的，而不是反过来。**
 
@@ -38,17 +38,17 @@ category: 思考
 
 而真正有护城河的产品，往往有自己的节奏和价值，AI 是为它提速，而不是定义它。
 
-### 那什么样的产品更容易穿越周期？
+## 那什么样的产品更容易穿越周期？
 
 我总结出四种类型：
 
-#### 1. 基于私域数据和垂直业务
+### 1. 基于私域数据和垂直业务
 
 比如医生的诊疗记录、学校的教学内容、企业的销售流程、公司内部的用户数据……这些知识是独特的、私有的，也是模型无法轻易复制的。
 
 一款工具如果能基于这些真实业务场景做深做透，再结合 AI 增强功能，不仅用户黏性强，也可以随着模型升级不断提效，而不会被轻易替代。
 
-#### 2. 和平台/硬件做深度结合
+### 2. 和平台/硬件做深度结合
 
 特别是在 iOS 生态里。
 
@@ -60,7 +60,7 @@ category: 思考
 
 ![](https://images.unsplash.com/photo-1605465155444-5f084e5ec10a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxNDIyNzR8MHwxfHNlYXJjaHw4fHxpb3MlMjB8ZW58MHx8fHwxNzQ4NDM2NDM0fDA&ixlib=rb-4.1.0&q=80&w=1080)
 
-#### 3. 有独特 IP 和品牌感知
+### 3. 有独特 IP 和品牌感知
 
 一个被记住的名字、一个独特的交互方式、一种审美、一种人设，这些东西很虚，但也最难被复制。
 
@@ -68,7 +68,7 @@ category: 思考
 
 很多时候，品牌带来的信任是可以穿越工具更替的。
 
-#### 4. 给用户情绪价值，让他沉淀自己的数据
+### 4. 给用户情绪价值，让他沉淀自己的数据
 
 你有没有那种感觉，某个 App 不一定功能有多强，但你舍不得删？
 
@@ -86,7 +86,7 @@ category: 思考
 
 ![](https://images.unsplash.com/photo-1614140598122-6e023909d990?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxNDIyNzR8MHwxfHNlYXJjaHw0NHx8d2FybXxlbnwwfHx8fDE3NDg0MzY3NTh8MA&ixlib=rb-4.1.0&q=80&w=1080)
 
-### 写在最后
+## 写在最后
 
 我们都在被时代推动着往前走。
 
