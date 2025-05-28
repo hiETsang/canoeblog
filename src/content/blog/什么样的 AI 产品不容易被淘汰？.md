@@ -4,7 +4,7 @@ slug: what-ai-products-wont-be-obsolete
 description: '谈谈在 AI 快速迭代的时代，什么样的产品更容易穿越周期、保持竞争力'
 tags:
   - AI
-  - 产品q
+  - 产品
   - 思考
 pubDate: 2025-05-28
 category: 思考
