@@ -10,14 +10,13 @@ import RssIcon from '../../assets/img/SiGlyphRss.svg';
 
 <footer class='container mt-8'>
 	<div class='justify-center flex gap-6 py-8 prose dark:prose-invert text-sm'>
-		<a
-			href='https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIxOTcxMDUwMQ%3D%3D&scene=124&uin=&key=&devicetype=iMac+Macmini8,1+OSX+OSX+13.4+build(22F66)&version=1308050b&lang=zh_CN&nettype=WIFI&a8scene=15&session_us=gh_273a27d679ce&fontScale=100'
-			target='_blank'
+		<button
 			class='social-icon wechat'
 			aria-label='微信'
+			onclick='showWechatModal()'
 		>
 			<Image src={WechatIcon} alt='微信' width={24} height={24} />
-		</a>
+		</button>
 		<a href='https://x.com/qzcanoe' target='_blank' class='social-icon twitter' aria-label='X'>
 			<Image src={TwitterXIcon} alt='X' width={24} height={24} />
 		</a>
@@ -112,4 +111,142 @@ import RssIcon from '../../assets/img/SiGlyphRss.svg';
 	:global(.dark) .rss:hover img {
 		filter: brightness(0) saturate(100%) invert(54%) sepia(91%) saturate(1304%) hue-rotate(359deg) brightness(99%) contrast(106%);
 	}
+
+	/* 微信浮窗样式 */
+	.wechat-modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 1000;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s ease, visibility 0.3s ease;
+	}
+
+	.wechat-modal.show {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.wechat-modal-content {
+		position: relative;
+		background-color: white;
+		border-radius: 12px;
+		padding: 20px;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+		max-width: 90%;
+		max-height: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	:global(.dark) .wechat-modal-content {
+		background-color: #1f2937;
+		color: white;
+	}
+
+	.wechat-modal-content img {
+		border-radius: 8px;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.wechat-modal-close {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		background: none;
+		border: none;
+		font-size: 24px;
+		cursor: pointer;
+		color: #666;
+		font-weight: bold;
+		line-height: 1;
+		padding: 0;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		transition: background-color 0.2s ease;
+	}
+
+	.wechat-modal-close:hover {
+		background-color: #f0f0f0;
+	}
+
+	:global(.dark) .wechat-modal-close {
+		color: #ccc;
+	}
+
+	:global(.dark) .wechat-modal-close:hover {
+		background-color: #374151;
+	}
+
+	.wechat-modal-title {
+		margin-bottom: 15px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #333;
+	}
+
+	:global(.dark) .wechat-modal-title {
+		color: #f9fafb;
+	}
 </style>
+
+<!-- 微信浮窗 -->
+<div id="wechat-modal" class="wechat-modal">
+	<div class="wechat-modal-content">
+		<button class="wechat-modal-close" onclick="hideWechatModal()">&times;</button>
+		<div class="wechat-modal-title">微信扫码关注</div>
+		<img src="/wechat.png" alt="微信二维码" />
+	</div>
+</div>
+
+<script>
+	function showWechatModal() {
+		const modal = document.getElementById('wechat-modal');
+		if (modal) {
+			modal.classList.add('show');
+			document.body.style.overflow = 'hidden';
+		}
+	}
+
+	function hideWechatModal() {
+		const modal = document.getElementById('wechat-modal');
+		if (modal) {
+			modal.classList.remove('show');
+			document.body.style.overflow = 'auto';
+		}
+	}
+
+	// 点击背景关闭浮窗
+	const modal = document.getElementById('wechat-modal');
+	if (modal) {
+		modal.addEventListener('click', function(e) {
+			if (e.target === this) {
+				hideWechatModal();
+			}
+		});
+	}
+
+	// ESC键关闭浮窗
+	document.addEventListener('keydown', function(e) {
+		if (e.key === 'Escape') {
+			hideWechatModal();
+		}
+	});
+
+	// 将函数绑定到全局作用域
+	(window as any).showWechatModal = showWechatModal;
+	(window as any).hideWechatModal = hideWechatModal;
+</script>

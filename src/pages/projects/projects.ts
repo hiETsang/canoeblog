@@ -37,6 +37,22 @@ export const projects: Project[] = [
     logo: '/img/projects/indieto-logo.png'
   },
   {
+    name: 'Twine by SwiftGG',
+    description: '参与开发的一款帮助开发者更轻松地学习苹果官方文档的浏览器插件',
+    demoLink: 'https://github.com/SwiftGGTeam/swiftgg-trans-plugin',
+    demoLinkRel: 'nofollow noopener noreferrer',
+    tags: ['Plugin', 'iOS', 'SwiftGG'],
+    logo: '/img/projects/twine-logo.png'
+  },
+  {
+    name: 'DiaSkills',
+    description: '为 Dia Browser 定制的AI自动化指令平台，让用户通过简单命令快速调用AI完成特定任务',
+    demoLink: 'https://diaskills.net/',
+    demoLinkRel: 'nofollow noopener noreferrer',
+    tags: ['AI', 'Browser', 'Automation'],
+    logo: '/img/projects/diaskills-logo.png'
+  },
+  {
     name: 'LinkToMarkdown',
     description: '一个简单且现代化的免费工具，从链接中提取文档并生成 Markdown',
     demoLink: 'https://linktomarkdown.com/',
@@ -56,12 +72,5 @@ export const projects: Project[] = [
     demoLink: 'https://letsvisionos24.swiftgg.team/',
     demoLinkRel: 'nofollow noopener noreferrer',
     tags: ['Event', 'visionOS']
-  },
-  {
-    name: 'Twine by SwiftGG',
-    description: '参与开发的一款帮助开发者更轻松地学习苹果官方文档的浏览器插件',
-    demoLink: 'https://github.com/SwiftGGTeam/swiftgg-trans-plugin',
-    demoLinkRel: 'nofollow noopener noreferrer',
-    tags: ['Plugin', 'iOS', 'SwiftGG']
   }
 ]
